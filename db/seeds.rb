@@ -5,3 +5,14 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+User.create([{username: "daniel", password: "password"}, {username: "username", password: "password"}])
+
+Goal.create(goal_title: "Finish this project", goal_description: "I want to really showcase my skills", goal_completed: false, user_id: 1)
+Goal.create(goal_title: "Get good sleep", goal_description: "i'm lacking sleep", goal_completed: true, user_id: 2)
+Step.create(step_title: "Front end using React", completed: true, user_id: 1)
+Step.create(step_title: "Backend using Rails", completed: false, user_id: 1)
+Step.create(step_title: "Routers using react-router", completed: false, user_id: 1)
+Step.create(step_title: "Finish this project", completed: false, user_id: 2)
+Step.create(step_title: "Give up, just joking", completed: false, user_id: 2)
+Step.create(step_title: "Drop out", completed: false, user_id: 2)

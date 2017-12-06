@@ -71,3 +71,18 @@ Migrating to AddCompletedToSteps (20171206154640)
   [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
   [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(5979870901800196485)[0m
   [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (3.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "password") VALUES ($1, $2) RETURNING "id"[0m  [["username", "daniel"], ["password", "password"]]
+  [1m[35m (7.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password") VALUES ($1, $2) RETURNING "id"[0m  [["username", "username"], ["password", "password"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (8.6ms)[0m  [1m[32mINSERT INTO "goals" ("goal_title", "goal_description", "user_id", "goal_completed") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["goal_title", "Finish this project"], ["goal_description", "I want to really showcase my skills"], ["user_id", 1], ["goal_completed", "f"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "goals" ("goal_title", "goal_description", "user_id", "goal_completed") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["goal_title", "Get good sleep"], ["goal_description", "i'm lacking sleep"], ["user_id", 2], ["goal_completed", "t"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
